@@ -8,13 +8,13 @@ export default function Posts() {
   console.log(posts)
   let navigate = useNavigate();
 
-  function handleNewPost() {
-    navigate('/posts/new');
-  }
-
   useEffect(() => {
     getPosts();
   }, [])
+
+  function handleNewPost() {
+    navigate('/posts/new');
+  }
 
     return ( 
       <div className="posts-container">

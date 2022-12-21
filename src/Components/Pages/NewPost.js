@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { Context } from "../Context/Context";
-import { nanoid } from 'nanoid';
+//import { nanoid } from 'nanoid';
 import { useNavigate } from 'react-router-dom';
 
 export default function NewPost(props) {
-  const { posts, setPosts, savePost } = useContext(Context);
+  const { posts, setPosts } = useContext(Context);
   const [text, setText] = useState('');
   let navigate = useNavigate();
 
@@ -16,9 +16,12 @@ export default function NewPost(props) {
       }
 
       function handleSavePost() {
-        const newPost = {id: `${nanoid()}`, content: text};
+        const newPost = {id: 0, content: text};
+        console.log(posts)
         posts.push(newPost);
+        console.log(posts)
         setPosts(posts);
+        console.log(posts)
         fetch('http://localhost:7778/posts', {
           method: 'POST',
           body: JSON.stringify(newPost)

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Context } from "./Context"
 
 export function ContextProvider(props) {
@@ -13,6 +13,8 @@ export function ContextProvider(props) {
         console.log(posts);
       })
     }
+
+    useEffect(()=> getPosts(),[])
 
     function getPostById(id){
       console.log(posts[0].id, id);
