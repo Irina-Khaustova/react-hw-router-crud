@@ -9,8 +9,8 @@ export default function PostView() {
   console.log()
   const {  posts, setPosts, isEdit, setIsEdit, getPostById } = useContext(Context);
   let { id } = useParams();
-  const post = getPostById(id);
-  console.log(id)
+  const post = getPostById(+id);
+  console.log(post)
 
   function handleEdit() {
     setIsEdit(true);
@@ -34,13 +34,13 @@ export default function PostView() {
     return (
         !isEdit? 
       <div className="post-view">
+        <button className="post-close" onClick={handleClose}>x</button>
         <Post  id={id} content={post.content}></Post>
         <div className="button-container">
           <button className="post-edit" onClick={handleEdit}>изменить</button>
           <button className="post-delete" onClick={handleDelete}>удалить</button>
-          <button className="post-close" onClick={handleClose}>x</button>
         </div>
       </div>
-      : <EditPost id={id}/>
+      : <EditPost id={+id}/>
     )
   }

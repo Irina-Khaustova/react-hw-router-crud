@@ -17,7 +17,7 @@ export function ContextProvider(props) {
     useEffect(()=> getPosts(),[])
 
     function getPostById(id){
-      console.log(posts[0].id, id);
+      console.log(posts[0].id === id);
       console.log(posts.find((i) => i.id === id))
       const post =  posts.find(i => i.id === id);
       return post;

@@ -9,12 +9,58 @@ body {
   justify-content: center;
 }
 
-.post-view {
-  border: 5px solid rgb(23, 23, 21);
+.create-post-button {
+  width: 100%;
+  background-color: bisque;
+  border: 2px solid rgb(244, 204, 156);
+  margin-bottom: 15px;
+  height: 30px;
+}
+
+.create-post-button:hover {
+  cursor: pointer;
+  background-color: rgb(252, 198, 133);
+}
+
+.post {
+  border: 2px solid gold;
   width: 300px;
+  margin-bottom: 15px;
+}
+
+.post-view {
+  border: 5px solid rgb(252, 208, 155);
+  width: 305px;
   font-size: 25px;
+  position: relative;
+  height: auto;
 }
 
 .post-content {
-  min-height: 150px;
+  min-height: 100px;
+  padding: 10px;
 }
+
+.post-created {
+  margin-bottom: 15px;
+  background-color: bisque;
+}
+
+.post-edit, .post-delete, .post-close {
+  background-color: rgb(252, 208, 155);
+  border: 2px solid rgb(252, 215, 171);
+  margin-left: 15px;
+  border-radius: 2px;
+}
+
+.post-close {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+}
+
+.post-close:hover, .post-delete:hover, .post-edit:hover {
+  cursor: pointer;
+  background-color: rgb(252, 198, 133);
+}
+

@@ -21,7 +21,7 @@ export default function Posts() {
         <button className="create-post-button" onClick={handleNewPost}>Создать пост</button>
   
       {posts.map((post) =>
-          <Post className="post-created" key={post.id} id={post.id} content={post.content}/>
+          <Post className="post-created" key={post.id} id={post.id} content={post.content} created={post.created}/>
       )}
       
       </div>

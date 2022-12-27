@@ -16,10 +16,13 @@ export default function NewPost(props) {
       }
 
       function handleSavePost() {
-        const newPost = {id: 0, content: text};
-        console.log(posts)
+        const time = new Date().getTime();
+        const date = new Date(time);
+        const created = date.toString();
+        
+        console.log(created)
+        const newPost = {id: 0, content: text, created: created};
         posts.push(newPost);
-        console.log(posts)
         setPosts(posts);
         console.log(posts)
         fetch('http://localhost:7778/posts', {
